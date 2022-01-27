@@ -7,7 +7,7 @@ ______________________________
 | DÖVİZ KURU HESAPLAYICI 
 ______________________________
 | 
-| Sürüm   : v1.0
+| Sürüm   : v1.2
 | Yapımcı : Beetlejuicetr (MID)
 | Destekci: Адыгэ
 | Dil     : Python 3.9
@@ -67,8 +67,8 @@ euro_usd_kur = euro_usd_span.string
 
 while True:
 	try:
-		girdi = int(input("\nYapılacak işlemi giriniz: "))
-		girdi2 = int(input("Dönüştürmek istediğiniz miktarı giriniz: "))
+		girdi = float(input("\nYapılacak işlemi giriniz: "))
+		girdi2 = float(input("Dönüştürmek istediğiniz miktarı giriniz: "))
 	except ValueError:
 		print("[UYARI] Sadece sayı girmelisiniz.")
 		break
@@ -79,24 +79,28 @@ while True:
 		sonuc = girdi2 * float(dolar_tl_kur)
 		print(girdi2,"Dolar ($)",":",sonuc,"Türk Lirası (₺)")
 		pass
-	if girdi == 2:
+	elif girdi == 2:
 		sonuc = girdi2 / float(dolar_tl_kur)
 		print(girdi2,"Türk Lirası (₺)",":",sonuc,"Dolar $",)
 		pass
-	if girdi == 3:
+	elif girdi == 3:
 		sonuc = girdi2 * float(euro_tl_kur)
 		print(girdi2,"Euro (€)",":",sonuc,"Türk Lirası (₺)")
 		pass
-	if girdi == 4:
+	elif girdi == 4:
 		sonuc = girdi2 / float(euro_tl_kur)
 		print(girdi2,"Türk Lirası (₺)",":",sonuc,"Euro (€)",)
 		pass
 
-	if girdi == 5:
+	elif girdi == 5:
 		sonuc = girdi2 / float(euro_usd_kur)
 		print(girdi2,"Dolar ()",":",sonuc,"Euro ()")
-	if girdi == 6:
+	elif girdi == 6:
 		sonuc = girdi2 * float(euro_usd_kur)
 		print(girdi2,"Euro ()",":",sonuc,"Dolar ()")
+	else:
+		print("1 - 6 arası sayı giriniz.")
 	print("-"*15)
+	
+
 	pass
