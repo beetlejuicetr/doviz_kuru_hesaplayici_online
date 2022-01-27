@@ -7,7 +7,7 @@ ______________________________
 | DÖVİZ KURU HESAPLAYICI 
 ______________________________
 | 
-| Sürüm   : v1.2
+| Sürüm   : v1.4
 | Yapımcı : Beetlejuicetr (MID)
 | Destekci: Адыгэ
 | Dil     : Python 3.9
@@ -68,6 +68,10 @@ euro_usd_kur = euro_usd_span.string
 while True:
 	try:
 		girdi = float(input("\nYapılacak işlemi giriniz: "))
+		if float(girdi) < 1 or float(girdi) > 6:
+			print("[UYARI] Lütfen (1 - 6) arası sayı giriniz.")
+			break
+
 		girdi2 = float(input("Dönüştürmek istediğiniz miktarı giriniz: "))
 	except ValueError:
 		print("[UYARI] Sadece sayı girmelisiniz.")
@@ -81,7 +85,7 @@ while True:
 		pass
 	elif girdi == 2:
 		sonuc = girdi2 / float(dolar_tl_kur)
-		print(girdi2,"Türk Lirası (₺)",":",sonuc,"Dolar $",)
+		print(girdi2,"Türk Lirası (₺)",":",sonuc,"Dolar ($)",)
 		pass
 	elif girdi == 3:
 		sonuc = girdi2 * float(euro_tl_kur)
@@ -94,12 +98,10 @@ while True:
 
 	elif girdi == 5:
 		sonuc = girdi2 / float(euro_usd_kur)
-		print(girdi2,"Dolar ()",":",sonuc,"Euro ()")
+		print(girdi2,"Dolar ($)",":",sonuc,"Euro (€)")
 	elif girdi == 6:
 		sonuc = girdi2 * float(euro_usd_kur)
-		print(girdi2,"Euro ()",":",sonuc,"Dolar ()")
-	else:
-		print("1 - 6 arası sayı giriniz.")
+		print(girdi2,"Euro (€)",":",sonuc,"Dolar ($)")
 	print("-"*15)
 	
 
