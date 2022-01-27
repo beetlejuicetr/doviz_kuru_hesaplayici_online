@@ -6,6 +6,6 @@ Gerekli paketleri indirmek için;
 
 ----------------
 
-pip install bsd4
+pip install bs4
 
 ----------------
