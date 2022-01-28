@@ -8,4 +8,6 @@ Gerekli paketleri indirmek için;
 
 pip install bs4
 
+pip install requests
+
 ----------------
